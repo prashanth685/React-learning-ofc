@@ -1,0 +1,8 @@
+class components:
+this keyword used in that
+
+
+functional components:
+absence of this keyword.
+solution without using state
+mainly responsible for ui
