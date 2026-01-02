@@ -6,3 +6,9 @@ functional components:
 absence of this keyword.
 solution without using state
 mainly responsible for ui
+
+
+conditional rendering:
+if/else
+element varibales
+ternary operator

@@ -8,11 +8,17 @@ import Counter from './Components/Counter'
 import Destruct from './Components/Destruct'
 import FunctionClick from './Components/FunctionClick'
 import ParentComponent from './Components/ParentComponent'
+import UserGreeting from './Components/UserGreeting'
+import NameList from './Components/NameList'
+import SampleData from './Components/SampleData'
+import ListKey from './Components/ListKey'
+import Styleings from './Components/Styleings'
+import Form from './Components/Form'
 
 const App = () => {
   return (
     <>
-    <Greet/>
+    {/* <Greet/>
     <Hello/>
     <ClassComp name="sachin" age="26"/>
     <Props name="ajay"/>
@@ -21,7 +27,12 @@ const App = () => {
     <Destruct name="kiran" age="30"/>
     <FunctionClick/>
     <ParentComponent/>
-
+    <UserGreeting/>
+    <NameList/>
+    <SampleData/>
+    <ListKey/> */}
+    {/* <Styleings primary={true}/> */}
+    <Form/>
     
     </>
   )
