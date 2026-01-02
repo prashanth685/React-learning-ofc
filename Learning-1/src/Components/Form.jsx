@@ -31,15 +31,16 @@ handlesubmit=(event)=>{
     event.preventDefault();
 }
   render() {
+    const {username,textarea,options}=this.state
     return (
       <div>
         <form action="" onSubmit={this.handlesubmit}>
         <label htmlFor="username">username</label>
-        <input type="text" value={this.state.username} onChange={this.handleuserName}/>
-        <textarea name="" id=""  value={this.state.textarea} onChange={this.handletextarea}></textarea>
-        <select name="" id="" value={this.state.options} onChange={this.handleoptions}
+        <input type="text" value={username} onChange={this.handleuserName}/>
+        <textarea name="" id=""  value={textarea} onChange={this.handletextarea}></textarea>
+        <select name="" id="" value={options} onChange={this.handleoptions}
         >
-            <option value="React">React</option>
+            <option value="">React</option>
             <option value="Css">css</option>
             <option value="js">js</option>
         </select>

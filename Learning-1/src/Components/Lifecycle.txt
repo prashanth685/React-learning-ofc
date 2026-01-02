@@ -1,0 +1,38 @@
+Mounting:
+constructor(props):
+A special function  that will get called when ever new componenet is created
+initializeds state binding the event handler
+do not cause side effects,ex:http requests
+super(props) directly overwrites
+static getDerivedStateFromProps(props,state):
+when the state of the componenet depends on changes in props over time
+set state
+do not cause side effects ex:http requests
+render():
+read props qand state return jsx
+do not change state or interact with DOM or make ajax calls
+childern components lifecycle methods are also executed.
+componentDidMount():
+invoked immediately after a componenet and all its childern components have beeen rendered to thje DOM
+cause side effects ex:interact with thr DOm
+
+
+updating lifecycle:
+static getDerivedStateFromProps(props,state)
+
+shouldComponentUpdate(nextProps,nextState)
+
+render()
+
+getSnapshotbefoere(prevProps,prevState)
+
+componeDidUPdatw(prevProps,prevState,snapshot)
+
+
+umount:
+componenetWillUnmount()
+
+
+error handling:
+static getDerivedStateFromError(error)
+componenetDidCatch(error,info)

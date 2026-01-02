@@ -14,6 +14,8 @@ import SampleData from './Components/SampleData'
 import ListKey from './Components/ListKey'
 import Styleings from './Components/Styleings'
 import Form from './Components/Form'
+import LifeCycleA from './Components/LifeCycleA'
+import LifeCycleC from './Components/LifeCycleC'
 
 const App = () => {
   return (
@@ -32,7 +34,9 @@ const App = () => {
     <SampleData/>
     <ListKey/> */}
     {/* <Styleings primary={true}/> */}
-    <Form/>
+    {/* <Form/> */}
+    {/* <LifeCycleA/> */}
+    <LifeCycleC/>
     
     </>
   )
