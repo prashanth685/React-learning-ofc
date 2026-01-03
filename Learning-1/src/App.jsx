@@ -22,6 +22,10 @@ import RefsDemo from './Components/RefsDemo'
 import PortalDemo from './Components/PortalDemo'
 import Hero from './Components/Hero'
 import ErrorBounndary from './Components/ErrorBounndary'
+import ClickCounter from './Components/ClickCounter'
+import HoverCounter from './Components/HoverCounter'
+import ComponentC from './Components/ComponentC'
+import { UserProvider } from './Components/UserContext'
 
 const App = () => {
   return (
@@ -57,7 +61,10 @@ const App = () => {
       <Hero heroName="joker"/>
 
 </ErrorBounndary>
-    
+{/* <ClickCounter/> */}
+<HoverCounter/>
+<UserProvider value="ajay">
+    <ComponentC/></UserProvider>
     </>
   )
 }
