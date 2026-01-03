@@ -16,6 +16,12 @@ import Styleings from './Components/Styleings'
 import Form from './Components/Form'
 import LifeCycleA from './Components/LifeCycleA'
 import LifeCycleC from './Components/LifeCycleC'
+import PureComponet from './Components/PureComponet'
+import Memo from './Components/Memo'
+import RefsDemo from './Components/RefsDemo'
+import PortalDemo from './Components/PortalDemo'
+import Hero from './Components/Hero'
+import ErrorBounndary from './Components/ErrorBounndary'
 
 const App = () => {
   return (
@@ -36,7 +42,21 @@ const App = () => {
     {/* <Styleings primary={true}/> */}
     {/* <Form/> */}
     {/* <LifeCycleA/> */}
-    <LifeCycleC/>
+    {/* <LifeCycleC/> */}
+    {/* <PureComponet/> */}
+    {/* <Memo/> */}
+    {/* <RefsDemo/> */}
+    <PortalDemo/>
+    <ErrorBounndary>
+    <Hero heroName="batman"/>
+</ErrorBounndary>
+<ErrorBounndary>
+      <Hero heroName="superman"/>
+</ErrorBounndary>
+<ErrorBounndary>
+      <Hero heroName="joker"/>
+
+</ErrorBounndary>
     
     </>
   )
