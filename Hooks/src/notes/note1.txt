@@ -3,3 +3,8 @@ what are hooks?
 
 why hooks?
 - this keyword
+
+Useeffect hook():
+close replace componentdidmount(),componenetdidupdate(),componenetwillunmount()
+
+runs every re-rendered

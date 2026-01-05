@@ -1,4 +1,9 @@
-const arr1=[1,2,3,4]
-const arr2=[]
-arr1.map((arr)=>{
-})
+async function getdata(){
+    try {
+        const res=await axios.get("https://jsonplaceholder.typicode.com/todos/1")
+        console.log(res.data)   
+    } catch (error) {
+        console.log(error)
+    }
+}
+getdata()
