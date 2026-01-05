@@ -1,0 +1,5 @@
+what are hooks?
+-without writing class
+
+why hooks?
+- this keyword
