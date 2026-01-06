@@ -1,0 +1,6 @@
+usereducer:
+used for state management alternate for usestate.
+
+usereducer(reducer,intialstate)
+newstate=reducer(currentstate,action)
+returns pair of value [newstate,dispatch]

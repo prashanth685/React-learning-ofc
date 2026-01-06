@@ -1,5 +1,6 @@
 import React from 'react'
-import ComponentC from './Components/ComponentC'
+import Counterone from './components/Counterone';
+// import ComponentC from './Components/ComponentC'
 
 export const UserContext=React.createContext()
 
@@ -13,6 +14,7 @@ const App = () => {
         <ComponentC/>
         </ChannelContext.Provider>
         </UserContext.Provider>
+        <Counterone/>
     </div>
   )
 }
