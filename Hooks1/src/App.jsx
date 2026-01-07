@@ -3,7 +3,7 @@ import ParentComponent from './components/ParentComponent'
 import Counter from './components/Counter'
 import Focusinput from './components/Focusinput'
 import HookTimer from './components/HookTimer'
-
+ import Doctitle from "./components/Doctitle"
 const App = () => {
   return (
     <div>
@@ -11,6 +11,7 @@ const App = () => {
       <Counter/>
       <Focusinput/>
       <HookTimer/>
+      <Doctitle/>
     </div>
   )
 }
