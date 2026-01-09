@@ -1,10 +1,38 @@
-const http = require("http");
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Hello world");
-});
+const redux=require("redux")
+const createStore=redux.createStore
 
-server.listen(2000, "localhost", () => {
-  console.log("Server running at http://localhost:2000");
-});
+const BUY_CAKE='BUY_CAKE'
+
+
+
+function buyCake(){
+  return{
+  type:BUY_CAKE,
+  info:'first_redux_action'
+  }
+}
+
+//(prevState,action)=> newState
+
+
+const initialstate={
+  noofCakess:10
+}
+
+const reducer=(state=initialstate,action)=>{
+  switch (action.type) {
+    case BUY_CAKE:
+      return {
+        ...state,
+        noofCakess:state.noofCakess-1
+      }
+  
+    default:
+      return state
+  }
+}
+
+
+const store=createStore(reducer)
+console.log("inital state",store.getState());

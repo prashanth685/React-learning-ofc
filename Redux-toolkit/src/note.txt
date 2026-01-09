@@ -1,0 +1,4 @@
+redux:is predictable state container for js apps
+js appplications
+state container
+predictable
