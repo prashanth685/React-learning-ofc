@@ -1,47 +1,60 @@
-const redux=require("redux")
+const redux = require("redux");
 
-const CAKE_ORDERED='CAKE_ORDERED'
+const createStore = redux.createStore;
+const CAKE_ORDERED = "CAKE_ORDERED";
 
+const CAKE_RESTOCKED = "CAKE_RESTOCKED";
 
-
-const createStore=redux.createStore
-
-function orderCake(){
-    return{
-    type:CAKE_ORDERED,
-    quantity:1
+function orderCake() {
+  return {
+    type: CAKE_ORDERED,
+    payload: 1,
+  };
 }
+
+function restockeCake(qty = 1) {
+  return {
+    type: CAKE_RESTOCKED,
+    payload: qty,
+  };
 }
+
 // (previousState,action)=>newState
-const initalState={
+const initalState = {
+  numOfCakes: 10,
+};
 
-    numOfCakes : 10,
-}
+const reducer = (state = initalState, action) => {
+  switch (action.type) {
+    case CAKE_ORDERED:
+      return {
+        ...state,
+        numOfCakes: state.numOfCakes - 1,
+      };
+    case CAKE_RESTOCKED:
+      return {
+        ...state,
+        numOfCakes: state.numOfCakes + action.payload,
+      };
 
-const reducer=(state=initalState,action)=>{
-    switch (action.type) {
-        case CAKE_ORDERED:
-            return {
-                ...state,
-                numOfCakes:state.numOfCakes-1
-            }
-    
-        default:
-            return state
-    }
-}
+    default:
+      return state;
+  }
+};
 
-const store=createStore(reducer)
-console.log("intial state",store.getState());
-const unsubscribe=store.subscribe(()=>{
-    console.log('updated state',store.getState())
-})
+const store = createStore(reducer);
+
+console.log("intial state", store.getState());
+const unsubscribe = store.subscribe(() => {
+  console.log("updated state", store.getState());
+});
 
 store.dispatch({
-    type:CAKE_ORDERED,
-    quantity:2
-})
-store.dispatch(orderCake())
-store.dispatch(orderCake())
+  type: CAKE_ORDERED,
+  payload: 4,
+});
+store.dispatch(orderCake());
+store.dispatch(orderCake());
+store.dispatch(restockeCake(3));
 
-unsubscribe()
+unsubscribe();
