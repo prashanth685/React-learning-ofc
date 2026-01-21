@@ -1,7 +1,0 @@
-redux:is predictable state container for js apps
-js appplications
-state container
-predictable
-
-redux toolkit:
-is offcial opinionated batteries-included toolset
