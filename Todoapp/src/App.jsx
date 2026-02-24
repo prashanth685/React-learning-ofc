@@ -1,30 +1,38 @@
 import React, { useEffect, useState } from "react";
+import { io } from "socket.io-client";
+
+const socket = io("http://localhost:3000");
 
 const App = () => {
-  const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState([]);
-  const handlechange = (e) => {
-    setTask(e.target.value);
-    console.log(task);
-  };
-  const Addtask = () => {
-    if (task.trim() === "") return;
-    setTasks([...tasks, task]);
-    setTask("");
-  };
+  const [message, setMessage] = useState("");
+
   useEffect(() => {
-    console.log("Tasks updated:", tasks);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
+    socket.on("connect", () => {
+      console.log("Connected to server:", socket.id);
+    });
+
+    socket.on("receive_message", (data) => {
+      console.log("Message from server:", data);
+    });
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
+
+  const sendMessage = () => {
+    socket.emit("send_message", message);
+  };
 
   return (
-    <div>
-      <input type="text" placeholder="enter a task " onChange={handlechange} />
-      <button onClick={Addtask}>+Add Task</button>
-      {tasks.map((t, index) => (
-        <li key={index}>{t}</li>
-      ))}
-    </div>
+    <>
+      <input
+        type="text"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      <button onClick={sendMessage}>Send</button>
+    </>
   );
 };
 
